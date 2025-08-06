@@ -4,5 +4,10 @@
   publish = ".next"
 [build.environment]
   ORCID_ID = "0000-0003-2637-613X"
+  NODE_VERSION = "18"
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
