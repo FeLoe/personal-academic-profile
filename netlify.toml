@@ -1,0 +1,8 @@
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = ".next"
+[build.environment]
+  ORCID_ID = "0000-0003-2637-613X"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
