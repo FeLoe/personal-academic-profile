@@ -391,7 +391,7 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* Enhanced News Section */}
+      {/* Enhanced News Section with Working Links */}
       <section className="py-20">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <div className="text-center mb-16">
@@ -408,21 +408,30 @@ export default function Overview() {
               {
                 year: 2025,
                 text: "Received the Keetje Hodshon Dissertation Prize (KHMW)",
-                link: true,
+                link: {
+                  url: "https://khmw.nl/winnares-khmw-keetje-hodshon-proefschriftprijs-voor-de-geesteswetenschappen-2025-nieuwsdiversiteit-is-cruciaal-voor-onze-democratie/", // Replace with actual URL
+                  text: "Read the interview",
+                },
                 type: "award",
                 color: "from-amber-400 to-yellow-500",
               },
               {
                 year: 2025,
                 text: "Received TDCC NWO Grant: RIGHTS",
-                link: false,
+                link: {
+                  url: "https://tdcc.nl/tdcc-ssh-challenge-projects/rights/", // Replace with actual URL
+                  text: "View grant details",
+                },
                 type: "grant",
                 color: "from-teal-400 to-emerald-500",
               },
               {
                 year: 2024,
                 text: "Teaching Grant: Responsible AI",
-                link: false,
+                link: {
+                  url: "https://tlc.uva.nl/en/article/responsible-ai-grant/", // Replace with actual URL
+                  text: "Learn more",
+                },
                 type: "teaching",
                 color: "from-green-400 to-teal-500",
               },
@@ -450,10 +459,12 @@ export default function Overview() {
                     </p>
                     {item.link && (
                       <a
-                        href="#"
-                        className="inline-flex items-center mt-3 text-teal-600 dark:text-teal-400 hover:text-teal-500 font-medium text-sm"
+                        href={item.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center mt-3 text-teal-600 dark:text-teal-400 hover:text-teal-500 font-medium text-sm group-hover:translate-x-1 transition-all duration-200"
                       >
-                        Read the interview
+                        {item.link.text}
                         <svg
                           className="w-4 h-4 ml-1"
                           fill="none"
@@ -568,7 +579,7 @@ export default function Overview() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        d="M10 6H6a2 2 0 00-2 2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
                   </a>

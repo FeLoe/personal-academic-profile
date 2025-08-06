@@ -170,7 +170,7 @@ export default function TalksAndWorkshops() {
     return <div className="min-h-screen bg-white" />;
   }
 
-  // Modern Talk Card component
+  // Fixed Talk Card component with proper link handling
   const TalkCard: React.FC<{ talk: TalkItem; color: string }> = ({
     talk,
     color,
@@ -185,7 +185,7 @@ export default function TalksAndWorkshops() {
                 href={talk.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+                className="block hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer"
               >
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-snug mb-2">
                   {talk.desc}
@@ -207,10 +207,15 @@ export default function TalksAndWorkshops() {
         </div>
 
         {talk.url && (
-          <div className="flex items-center text-teal-600 dark:text-teal-400 text-sm font-medium">
+          <a
+            href={talk.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-300 text-sm font-medium cursor-pointer transition-colors"
+          >
             View Details
             <svg
-              className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -222,13 +227,13 @@ export default function TalksAndWorkshops() {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </div>
+          </a>
         )}
       </div>
     </div>
   );
 
-  // Modern Service Role Card component
+  // Fixed Service Role Card component with proper link handling
   const ServiceCard: React.FC<{ role: RoleItem; color: string }> = ({
     role,
     color,
@@ -241,7 +246,7 @@ export default function TalksAndWorkshops() {
             href={role.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+            className="block hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer"
           >
             <p className="text-base font-semibold text-gray-900 dark:text-white leading-relaxed mb-4">
               {role.desc}
@@ -254,10 +259,15 @@ export default function TalksAndWorkshops() {
         )}
 
         {role.url && (
-          <div className="flex items-center text-teal-600 dark:text-teal-400 text-sm font-medium">
+          <a
+            href={role.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-300 text-sm font-medium cursor-pointer transition-colors"
+          >
             Learn More
             <svg
-              className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -269,7 +279,7 @@ export default function TalksAndWorkshops() {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </div>
+          </a>
         )}
       </div>
     </div>

@@ -152,7 +152,7 @@ export default function Teaching() {
     return <div className="min-h-screen bg-white" />;
   }
 
-  // Modern PhD Supervision Card component
+  // Fixed PhD Supervision Card component
   const PhDCard: React.FC<{ student: PhDSupervisionItem; color: string }> = ({
     student,
     color,
@@ -166,7 +166,7 @@ export default function Teaching() {
               href={student.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+              className="text-xl font-bold text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer"
             >
               {student.name}
             </a>
@@ -209,10 +209,15 @@ export default function Teaching() {
         </div>
 
         {student.url && (
-          <div className="mt-4 flex items-center text-teal-600 dark:text-teal-400 text-sm font-medium">
+          <a
+            href={student.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-300 text-sm font-medium cursor-pointer transition-colors"
+          >
             View Project
             <svg
-              className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -224,13 +229,13 @@ export default function Teaching() {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </div>
+          </a>
         )}
       </div>
     </div>
   );
 
-  // Modern Teaching Card component
+  // Fixed Teaching Card component
   const TeachingCard: React.FC<{
     item: TeachingItem;
     color: string;
@@ -244,7 +249,7 @@ export default function Teaching() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+            className="block hover:text-teal-600 dark:hover:text-teal-400 transition-colors cursor-pointer"
           >
             <p
               className={`${
@@ -265,10 +270,15 @@ export default function Teaching() {
         )}
 
         {item.url && (
-          <div className="mt-4 flex items-center text-teal-600 dark:text-teal-400 text-sm font-medium">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-300 text-sm font-medium cursor-pointer transition-colors"
+          >
             Learn More
             <svg
-              className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -280,7 +290,7 @@ export default function Teaching() {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </div>
+          </a>
         )}
       </div>
     </div>
