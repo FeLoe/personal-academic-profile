@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import React from "react";
 import ClientWrapper from "./ClientWrapper";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const revalidate = 3600;
 
 type WorkSummary = {
