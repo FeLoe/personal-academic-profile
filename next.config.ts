@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Turn off built-in image optimization so Netlify will just serve your /public/avatar.jpg
+  images: {
+    unoptimized: true,
+  },
+  // …any other existing config options…
 };
 
 export default nextConfig;
